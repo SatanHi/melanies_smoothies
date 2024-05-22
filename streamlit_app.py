@@ -32,6 +32,8 @@ if ingredients_lists :
 
     for fruit_chosen in ingredients_lists:
         ingredients_string += fruit_chosen + ' '
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        fv_dv = st.dataframe(data=fruityvice_response.json(),use_container_width=True)
         
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             values ('""" + ingredients_string + """','"""+ name_on_order+"""')"""
@@ -45,7 +47,6 @@ if ingredients_lists :
 
 
     import requests
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-    fv_dv = st.dataframe(data=fruityvice_response.json(),use_container_width=True)
+    
 
 
