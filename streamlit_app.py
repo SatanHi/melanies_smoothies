@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+import requests
 from snowflake.snowpark.functions import col
 
 
@@ -46,7 +47,7 @@ if ingredients_lists :
         st.success('Your Smoothie is ordered!', icon="✅")
 
 
-    import requests
+    
     
 
 
